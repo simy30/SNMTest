@@ -1,3 +1,4 @@
+<script>
 // Example using Node.js (Express or Serverless)
 import fetch from 'node-fetch';
 
@@ -12,4 +13,5 @@ export default async (req, res) => {
   const data = await response.json();
   res.status(200).json(data);
 };
+</script>
 
