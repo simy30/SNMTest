@@ -21,8 +21,11 @@ app.get('/api/webflow-pages', async (req, res) => {
 
     const data = await response.json();
     res.setHeader('Access-Control-Allow-Origin', '*'); // Optional, for dev
+        res.status(200).json(data);         // <- Ensure you're sending JSON back
     res.json(data);
+    
   } catch (error) {
+        console.error("Webflow API error:", error);
     console.error(error);
     res.status(500).json({ error: 'Webflow fetch failed' });
   }
